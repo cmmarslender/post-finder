@@ -1,6 +1,6 @@
 {
     "name": "cmmarslender/post-finder",
-    "type": "wordpress-plugin",
+    "type": "wordpress-library",
     "description": "Adds a UI for curating and ordering posts",
     "authors": [
         {
@@ -14,5 +14,8 @@
     ],
     "require": {
         "composer/installers": "~1.0"
+    },
+    "autoload": {
+        "files": [ "post-finder.php" ]
     }
 }
