@@ -12,8 +12,10 @@
             "homepage": "https://github.com/micahwave/"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "cmmarslender/wp-library-helpers": "dev-master"
     },
     "autoload": {
         "files": [ "post-finder.php" ]
