@@ -27,14 +27,6 @@ class NS_Post_Finder {
 		add_action( 'wp_ajax_pf_search_posts', array( $this, 'search_posts' ) );
 	}
 
-	function library_url( $path, $file ) {
-		$path = trailingslashit( str_replace( WP_CONTENT_DIR, '', dirname( $file ) ) ) . $path;
-
-		$url = content_url( $path );
-
-		return $url;
-	}
-
 	/**
 	 * Enable our scripts and stylesheets
 	 *
@@ -44,7 +36,7 @@ class NS_Post_Finder {
 
 		wp_enqueue_script(
 			'post-finder',
-			$this->library_url( 'js/main.js', __FILE__ ),
+			\Cmmarslender\WPLibraryHelpers\library_url( 'js/main.js', __FILE__ ),
 			array(
 				'jquery',
 				'jquery-ui-draggable',
@@ -66,7 +58,7 @@ class NS_Post_Finder {
 			)
 		);
 
-		wp_enqueue_style( 'post-finder', $this->library_url( 'css/screen.css', __FILE__ ) );
+		wp_enqueue_style( 'post-finder', \Cmmarslender\WPLibraryHelpers\library_url( 'css/screen.css', __FILE__ ) );
 	}
 
 	/**
