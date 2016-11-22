@@ -189,7 +189,10 @@ class NS_Post_Finder {
 	 * @param array $options Field options
 	 */
 	public static function render( $name, $value, $options = array() ) {
-
+		
+		// Set a default value to not throw notices if no posts are selected
+		$posts = array();
+		
 		$options = wp_parse_args( $options, array(
 			'show_numbers'            => true, // display numbers next to post
 			'show_icons'              => true, // show icon or text actions
